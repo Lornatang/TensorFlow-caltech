@@ -43,8 +43,8 @@ parser.add_argument('--classes', type=int, default=102,
                     help="Classification picture type. default: 102")
 parser.add_argument('--buffer_size', type=int, default=1000,
                     help="Train dataset size. default: 1000.")
-parser.add_argument('--batch_size', type=int, default=32,
-                    help="one step train dataset size. default: 32")
+parser.add_argument('--batch_size', type=int, default=16,
+                    help="one step train dataset size. default: 16")
 parser.add_argument('--epochs', '--e', type=int, default=10,
                     help="Train epochs. default: 10")
 
