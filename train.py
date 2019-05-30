@@ -72,7 +72,7 @@ args = parser.parse_args()
 print(args)
 
 # Load pre train model MobileNetV2
-base_model = DenseNet121(include_top=False,
+base_model = MobileNetV2(include_top=False,
                          input_shape=(args.height, args.width, args.channels),
                          weights='imagenet',
                          classes=args.classes)
