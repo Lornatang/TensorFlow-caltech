@@ -18,6 +18,7 @@ from dataset import get_label_name
 import tensorflow as tf
 
 import argparse
+import time
 
 parser = argparse.ArgumentParser('Prediction mnist label')
 
@@ -58,6 +59,7 @@ checkpoint = tf.train.Checkpoint(model=model)
 checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir=args.checkpoint_dir))
 print(f"Load model successful!")
 print(f"==========================================")
+print()
 
 
 def process_image(image, height=args.height, width=args.width):
@@ -100,19 +102,20 @@ def prediction(img):
   # Add the image to a batch where it's the only member.
   image = (tf.expand_dims(image, 0))
 
-  print(f"Start making predictions about the picture.")
+  print(f"Start making predictions about the picture......")
+  start = time.time()
 
   predictions = model(image)
   classes = int(tf.argmax(predictions[0]))
-  print(f"==========================================")
-  print(f"Label is : {label_names(classes)}")
-  print(f"==========================================")
+  print("done.")
+  print()
+  print(f"Label is : {label_names(classes)} times: {time.time() - start:.4} sec")
   print()
 
 
 if __name__ == '__main__':
   while True:
-    a = input("files(input '0' exit.):")
+    a = input("files(input '0' or 'any str' to exit.):")
     if a == '0':
       print("Successful exit. return status 0.")
       exit(0)
