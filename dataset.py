@@ -38,7 +38,7 @@ def process_image(image, label, height=224, width=224):
   return image, label
 
 
-def load_data(name='caltech101', train_size=7, val_size=2, test_size=1, buffer_size=1000, batch_size=32):
+def load_data(name='caltech101', train_size=7, val_size=2, test_size=1, buffer_size=1000, batch_size=16):
   """ load every cats_vs_dogs dataset.
 
   Args:
