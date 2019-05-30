@@ -114,8 +114,8 @@ if __name__ == '__main__':
   while True:
     a = input("files(input '0' exit.):")
     if a == '0':
-      exit(0)
       print("Successful exit. return status 0.")
+      exit(0)
     else:
       a = a[:-1]
       a = tf.cast(a, tf.string)
